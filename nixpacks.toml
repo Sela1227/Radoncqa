@@ -1,0 +1,9 @@
+# Railway 部署設定（雲端 build）
+# Nixpacks 自動偵測 Node、安裝相依（有 package-lock.json 走 npm ci）。
+# build：跑 tsc + vite build 產出 dist/
+# start：用 serve 端出 dist/，serve 預設綁 0.0.0.0，埠吃 Railway 注入的 $PORT
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm run start"
